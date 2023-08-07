@@ -85,7 +85,7 @@ const Notes = (props) => {
                         return <Noteitem key={note._id} updateNote={updateNote} note={note} />;
                     })
                 }
-            </div>
+                </div>
         </>
     );
 }

@@ -1,9 +1,10 @@
 import React from "react";
 import NoteContext from "./noteContext";
 import { useState } from 'react';
+
 const NoteState = (props) => {
 
-    const host = "http://localhost:5000";
+    const host = "https://inotebook-backend-amber.vercel.app";
     const initialNotes = [];
 
     const addNoteAlert = () => {
@@ -28,6 +29,7 @@ const NoteState = (props) => {
         });
 
         const json = await response.json();
+        console.log(json)
         setNotes(notes.concat(json))
     }
 
@@ -41,6 +43,7 @@ const NoteState = (props) => {
             }
         });
         const json = await response.json();
+        console.log(json)
         setNotes(json);
     }
 
@@ -62,6 +65,7 @@ const NoteState = (props) => {
         props.showAlert("Note has been Deleted","danger");
         setNotes(newNotes)
     }
+
     //edit a note
     const editNote = async (id, title, description, tag) => {
         //api Call
